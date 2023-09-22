@@ -22,5 +22,3 @@ spring:
     secretKey : ${JWT_KEY}
     accessExp : ${ACCESS_TOKEN_TIME}
     refreshExp : ${REFRESH_TOKEN_TIME}
-
-
