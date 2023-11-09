@@ -1,6 +1,6 @@
 # CRC(Candidate, Responsiblity, Collaboration)카드
 
-## CRC(Candidate, Responsiblity, Collaboration)카
+## CRC(Candidate, Responsiblity, Collaboration)카드
 
 객체 - 책임 - 공동 작업자의 약자이다 객체 지향 소프트웨어 설계에서 사용 되는 브레인 스토밍 툴이다
 
