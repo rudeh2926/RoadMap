@@ -9,9 +9,8 @@ public enum ErrorCode {
 
     EXPIRED_JWT(401, "Expired Jwt"),
     INVALID_JWT(401, "Invalid Jwt"),
-    PASSWORD_MIS_MATCH(401, "Password Mis Match"),
+    PASSWORD_MISS_MATCH(401, "Password Miss Match"),
     INVALID_REFRESH_TOKEN(401, "Invalid Refresh Token"),
-
 
     ACCOUNTID_ALREADY_EXISTS(409, "AccountId Already Exists"),
     USER_NOT_FOUND(404, "User Not Found"),

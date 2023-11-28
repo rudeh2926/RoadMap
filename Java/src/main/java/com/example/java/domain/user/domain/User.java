@@ -1,7 +1,8 @@
 package com.example.java.domain.user.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Entity(name = "tbl_user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
