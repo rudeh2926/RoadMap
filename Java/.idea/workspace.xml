@@ -15,42 +15,74 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2YnSAAFkDk0PSAcx8Dv3YWgKHlL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/dokyung/Desktop/project/RoadMap/Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="ACCESS_TOKEN_TIME" value="360000" />
+        <env name="JWT_KEY" value="asdfasdfasdf" />
+        <env name="PASSWORD" value="rlaehrud9919@" />
+        <env name="REDIS_HOST" value="localhost" />
+        <env name="REDIS_PORT" value="6379" />
+        <env name="URL" value="jdbc:mysql://localhost:3306/java" />
+        <env name="USERNAME" value="root" />
+        <env name="REFRESH_TOKEN_TIME" value="3600000" />
+      </envs>
       <module name="Java.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.java.JavaApplication" />
       <method v="2">
@@ -67,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701159704686</updated>
       <workItem from="1701159705711" duration="68000" />
+      <workItem from="1701159835064" duration="11556000" />
     </task>
     <servers />
   </component>
