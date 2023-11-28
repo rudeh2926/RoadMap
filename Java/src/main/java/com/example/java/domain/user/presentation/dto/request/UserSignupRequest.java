@@ -19,6 +19,5 @@ public class UserSignupRequest {
     @NotBlank
     private String name;
 
-    @NotBlank
     private Sex sex;
 }
