@@ -14,14 +14,6 @@ spring:
   redis:
     host: ${REDIS_HOST}
     port: ${REDIS_PORT}
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${EMAIL}
-    password: ${EMAIL-PASSWORD}
-    properties:
-      mail.smtp.auth: true
-      mail.smtp.starttls.enable: true
 
   jackson:
     property-naming-strategy : SNAKE_CASE
