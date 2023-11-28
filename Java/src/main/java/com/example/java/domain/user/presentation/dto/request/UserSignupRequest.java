@@ -1,8 +1,10 @@
 package com.example.java.domain.user.presentation.dto.request;
 
-import jakarta.validation.constraints.NotBlank;
+import com.example.java.domain.user.domain.Sex;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @NoArgsConstructor
@@ -18,5 +20,5 @@ public class UserSignupRequest {
     private String name;
 
     @NotBlank
-    private String sex;
+    private Sex sex;
 }
