@@ -2,24 +2,21 @@ package com.example.java.global.security.jwt;
 
 import com.example.java.domain.auth.domain.RefreshToken;
 import com.example.java.domain.auth.domain.repository.RefreshTokenRepository;
-import com.example.java.global.error.exception.BusinessException;
-import com.example.java.global.error.exception.ErrorCode;
 import com.example.java.global.security.jwt.dto.TokenResponse;
+import com.example.java.global.security.jwt.exception.ExpiredJwtException;
 import com.example.java.global.security.principle.AuthDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 @Component
-@Builder
 @RequiredArgsConstructor
 public class JwtTokenProvider {
 
@@ -88,7 +85,7 @@ public class JwtTokenProvider {
             return Jwts.parser().setSigningKey(jwtProperties.getSecretKey())
                     .parseClaimsJws(token).getBody();
         } catch (Exception e) {
-            throw new BusinessException(ErrorCode.EXPIRED_JWT);
+            throw ExpiredJwtException.EXCEPTION;
         }
     }
 }
