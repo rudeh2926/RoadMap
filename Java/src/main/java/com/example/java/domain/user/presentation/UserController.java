@@ -2,7 +2,9 @@ package com.example.java.domain.user.presentation;
 
 import com.example.java.domain.user.presentation.dto.request.UserLoginRequest;
 import com.example.java.domain.user.presentation.dto.request.UserSignupRequest;
+import com.example.java.domain.user.presentation.dto.response.UserMyInfoResponse;
 import com.example.java.domain.user.service.LoginUserService;
+import com.example.java.domain.user.service.MyInfoService;
 import com.example.java.domain.user.service.SignupUserService;
 import com.example.java.global.security.jwt.dto.TokenResponse;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,7 @@ public class UserController {
 
     private final SignupUserService signupUserService;
     private final LoginUserService loginUserService;
+    private final MyInfoService myInfoService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
@@ -28,5 +31,10 @@ public class UserController {
     @PostMapping("/login")
     public TokenResponse login(@RequestBody @Valid UserLoginRequest userLoginRequest) {
         return loginUserService.execute(userLoginRequest);
+    }
+
+    @GetMapping
+    public UserMyInfoResponse myInfo() {
+        return myInfoService.execute();
     }
 }
