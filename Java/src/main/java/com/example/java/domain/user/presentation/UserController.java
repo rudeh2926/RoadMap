@@ -40,7 +40,7 @@ public class UserController {
         updateMyInfoService.execute(updateMyInfoRequest);
     }
 
-    @PatchMapping
+    @PatchMapping("/password")
     public void updatePassword(@RequestBody @Valid UpdatePasswordRequest updatePasswordRequest) {
         updatePasswordService.execute(updatePasswordRequest);
     }
