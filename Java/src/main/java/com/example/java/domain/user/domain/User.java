@@ -33,4 +33,8 @@ public class User {
         this.name = name;
         this.sex = sex;
     }
+
+    public void passwordUpdate(String password) {
+        this.password = password;
+    }
 }
