@@ -27,4 +27,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Sex sex;
+
+    public void update(String accountId, String name, Sex sex) {
+        this.accountId = accountId;
+        this.name = name;
+        this.sex = sex;
+    }
 }
