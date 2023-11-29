@@ -18,10 +18,10 @@ public class UpdatePasswordService {
     @Transactional
     public void execute(UpdatePasswordRequest request) {
         User user = userFacade.getCurrentUser();
-        if (passwordEncoder.matches(user.getPassword(), request.getNewPassword())) {
+        if (passwordEncoder.matches(user.getPassword(), request.getPassword())) {
             throw new IllegalArgumentException("다른 비밀번호로 설정해주세요");
         }
-        if (request.getNewPassword().equals(request.getNewPassword())) {
+        if (!request.getNewPassword().equals(request.getNewPassword())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 

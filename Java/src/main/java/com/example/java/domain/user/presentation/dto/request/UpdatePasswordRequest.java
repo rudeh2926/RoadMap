@@ -12,4 +12,6 @@ public class UpdatePasswordRequest {
     private String validPassword;
     @NotBlank
     private String newPassword;
+    @NotBlank
+    private String password;
 }
