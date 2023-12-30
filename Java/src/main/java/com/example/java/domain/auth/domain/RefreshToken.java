@@ -17,4 +17,3 @@ public class RefreshToken {
 
     private Long refreshTokenTime;
 }
-
