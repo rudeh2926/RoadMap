@@ -1,8 +1,10 @@
 package com.example.java.domain.user.domain;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity(name = "tbl_user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -12,8 +14,13 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    @Column(
+            columnDefinition = "BINARY(16)",
+            nullable = false
+    )
+    private UUID id;
 
     @Column(nullable = false)
     private String accountId;

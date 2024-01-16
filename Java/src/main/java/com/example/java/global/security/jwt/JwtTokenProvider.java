@@ -24,36 +24,26 @@ public class JwtTokenProvider {
     private final AuthDetailsService authDetailsService;
     private final RefreshTokenRepository refreshTokenRepository;
 
+    private static final String ACCESS_KEY = "access_token";
+    private static final String REFRESH_KEY = "refresh_token";
+
     public TokenResponse getToken(String accountId) {
-        String accessToken = generateToken(accountId, jwtProperties.getAccessExp());
-        String refreshToken = generateRefreshToken(accountId);
-        long currentTimeMillis = System.currentTimeMillis();
-        long expirationTime = currentTimeMillis + (jwtProperties.getAccessExp() * 1000);
-        return TokenResponse.builder()
-                .accessToken(accessToken)
+        String accessToken = generateToken(accountId, jwtProperties.getAccessExp(),ACCESS_KEY);
+        String refreshToken = generateToken(accountId, jwtProperties.getRefreshExp(), REFRESH_KEY);
+
+        refreshTokenRepository.save(RefreshToken.builder()
+                .accountId(accountId)
                 .refreshToken(refreshToken)
-                .expiredAt(expirationTime)
-                .build();
+                .refreshTokenTime(jwtProperties.getRefreshExp() * 1000)
+                .build());
+
+        return new TokenResponse(accessToken, refreshToken);
     }
 
-    public String generateRefreshToken(String accountId) {
-        String newRefreshToken = generateToken(accountId, jwtProperties.getRefreshExp());
-        long currentTimeMillis = System.currentTimeMillis();
-        long expirationTime = currentTimeMillis + (jwtProperties.getRefreshExp() * 1000);
-        refreshTokenRepository.save(
-                RefreshToken.builder()
-                        .accountId(accountId)
-                        .refreshToken(newRefreshToken)
-                        .refreshTokenTime(expirationTime)
-                        .build()
-        );
-        return newRefreshToken;
-    }
-
-    private String generateToken(String accountId, long expiration) {
+    private String generateToken(String accountId, long expiration, String type) {
         return Jwts.builder().signWith(SignatureAlgorithm.HS256, jwtProperties.getSecretKey())
                 .setSubject(accountId)
-                .setHeaderParam("typ", "access")
+                .setHeaderParam("typ", type)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
                 .compact();
